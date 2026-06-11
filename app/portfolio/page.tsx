@@ -1,45 +1,11 @@
-import { CASH, START_VALUE } from '@/lib/holdings'
+import { CASH } from '@/lib/holdings'
+import { getPortfolioData, type Position } from '@/lib/prices'
 
 export const revalidate = 300
 
-type Position = {
-  ticker:  string
-  label:   string
-  note:    string
-  shares:  number
-  avgCost: number
-  price:   number
-  value:   number
-  pnl:     number
-  pnlPct:  number
-  live:    boolean
-}
-
-type PortfolioData = {
-  positions:   Position[]
-  cash:        number
-  totalValue:  number
-  totalPnl:    number
-  totalPnlPct: number
-  updatedAt:   string
-}
-
-async function getPortfolio(): Promise<PortfolioData | null> {
-  try {
-    const base = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : 'http://localhost:3000'
-    const res = await fetch(`${base}/api/portfolio`, { next: { revalidate: 300 } })
-    if (!res.ok) return null
-    return res.json()
-  } catch {
-    return null
-  }
-}
-
 function pnlColor(n: number) {
-  if (n > 0)  return 'text-green'
-  if (n < 0)  return 'text-red'
+  if (n > 0) return 'text-green'
+  if (n < 0) return 'text-red'
   return 'text-white/50'
 }
 
@@ -48,7 +14,7 @@ function fmt(n: number, decimals = 2) {
 }
 
 export default async function PortfolioPage() {
-  const data = await getPortfolio()
+  const data = await getPortfolioData()
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
@@ -57,29 +23,25 @@ export default async function PortfolioPage() {
         <p className="text-gold font-mono text-xs tracking-widest uppercase mb-2">Live Tracker</p>
         <h1 className="text-4xl font-bold text-white mb-2">Portfolio</h1>
         <p className="text-white/40 text-sm font-mono">
-          Starting capital: $100,000 · Launched June 7, 2026
-          {data && (
-            <> · Updated {new Date(data.updatedAt).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</>
-          )}
+          Starting capital: $100,000 · Launched June 7, 2026 · Updated{' '}
+          {new Date(data.updatedAt).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
         </p>
       </div>
 
       {/* Summary cards */}
-      {data && (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          {[
-            { label: 'Portfolio Value', value: `$${fmt(data.totalValue)}` },
-            { label: 'Total P&L',      value: `${data.totalPnl >= 0 ? '+' : ''}$${fmt(data.totalPnl)}`, color: pnlColor(data.totalPnl) },
-            { label: 'Return',         value: `${data.totalPnlPct >= 0 ? '+' : ''}${fmt(data.totalPnlPct)}%`, color: pnlColor(data.totalPnlPct) },
-            { label: 'Cash Remaining', value: `$${fmt(data.cash)}` },
-          ].map(c => (
-            <div key={c.label} className="bg-card border border-white/10 rounded-lg p-5">
-              <p className={`font-mono text-xl font-bold mb-1 ${c.color ?? 'text-white'}`}>{c.value}</p>
-              <p className="text-white/40 text-xs font-mono uppercase tracking-wide">{c.label}</p>
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        {[
+          { label: 'Portfolio Value', value: `$${fmt(data.totalValue)}` },
+          { label: 'Total P&L',      value: `${data.totalPnl >= 0 ? '+' : ''}$${fmt(data.totalPnl)}`,     color: pnlColor(data.totalPnl) },
+          { label: 'Return',         value: `${data.totalPnlPct >= 0 ? '+' : ''}${fmt(data.totalPnlPct)}%`, color: pnlColor(data.totalPnlPct) },
+          { label: 'Cash Remaining', value: `$${fmt(data.cash)}` },
+        ].map(c => (
+          <div key={c.label} className="bg-card border border-white/10 rounded-lg p-5">
+            <p className={`font-mono text-xl font-bold mb-1 ${c.color ?? 'text-white'}`}>{c.value}</p>
+            <p className="text-white/40 text-xs font-mono uppercase tracking-wide">{c.label}</p>
+          </div>
+        ))}
+      </div>
 
       {/* Holdings table */}
       <div className="bg-card border border-white/10 rounded-xl overflow-hidden">
@@ -99,7 +61,7 @@ export default async function PortfolioPage() {
               </tr>
             </thead>
             <tbody>
-              {data ? data.positions.map((p, i) => (
+              {data.positions.map((p: Position, i: number) => (
                 <tr key={p.ticker} className={`border-b border-white/5 hover:bg-white/5 transition-colors ${i % 2 === 0 ? '' : 'bg-white/[0.02]'}`}>
                   <td className="px-6 py-4">
                     <p className="text-gold font-bold">{p.ticker}</p>
@@ -119,13 +81,7 @@ export default async function PortfolioPage() {
                     </p>
                   </td>
                 </tr>
-              )) : (
-                <tr>
-                  <td colSpan={6} className="text-center py-12 text-white/30 font-mono text-sm">
-                    Loading live prices...
-                  </td>
-                </tr>
-              )}
+              ))}
 
               {/* Cash row */}
               <tr className="border-t border-white/10 bg-white/[0.02]">
