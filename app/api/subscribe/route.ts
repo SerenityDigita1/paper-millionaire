@@ -7,29 +7,35 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Valid email required.' }, { status: 400 })
   }
 
-  const apiKey = process.env.RESEND_API_KEY
-  if (!apiKey) {
+  const apiKey       = process.env.BEEHIIV_API_KEY
+  const pubId        = process.env.BEEHIIV_PUBLICATION_ID
+
+  if (!apiKey || !pubId) {
     // Dev mode — log and return success so the form works locally
-    console.log(`[subscribe] Would add: ${email}`)
+    console.log(`[subscribe] Would add to Beehiiv: ${email}`)
     return NextResponse.json({ ok: true })
   }
 
   try {
-    const audienceId = process.env.RESEND_AUDIENCE_ID
-    if (!audienceId) throw new Error('RESEND_AUDIENCE_ID not set')
-
-    const res = await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, unsubscribed: false }),
-    })
+    const res = await fetch(
+      `https://api.beehiiv.com/v2/publications/${pubId}/subscriptions`,
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          reactivate_existing: true,
+          send_welcome_email:  true,
+        }),
+      }
+    )
 
     if (!res.ok) {
       const err = await res.json()
-      throw new Error(err.message ?? 'Resend error')
+      throw new Error(err.message ?? 'Beehiiv error')
     }
 
     return NextResponse.json({ ok: true })
