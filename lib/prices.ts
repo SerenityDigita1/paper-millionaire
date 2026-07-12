@@ -1,16 +1,17 @@
-import { HOLDINGS, CASH } from './holdings'
+import { HOLDINGS, CASH, type Dividend } from './holdings'
 
 export type Position = {
-  ticker:  string
-  label:   string
-  note:    string
-  shares:  number
-  avgCost: number
-  price:   number
-  value:   number
-  pnl:     number
-  pnlPct:  number
-  live:    boolean
+  ticker:    string
+  label:     string
+  note:      string
+  shares:    number
+  avgCost:   number
+  price:     number
+  value:     number
+  pnl:       number
+  pnlPct:    number
+  live:      boolean
+  dividend?: Dividend
 }
 
 export type PortfolioData = {
@@ -51,22 +52,23 @@ export async function getPortfolioData(): Promise<PortfolioData> {
     const pnlPct    = (pnl / costBasis) * 100
     totalValue += value
     return {
-      ticker:  h.ticker,
-      label:   h.label,
-      note:    h.note,
-      shares:  h.shares,
-      avgCost: h.avgCost,
-      price:   Math.round(price * 100) / 100,
-      value:   Math.round(value * 100) / 100,
-      pnl:     Math.round(pnl * 100) / 100,
-      pnlPct:  Math.round(pnlPct * 100) / 100,
-      live:    prices[i] !== null,
+      ticker:   h.ticker,
+      label:    h.label,
+      note:     h.note,
+      shares:   h.shares,
+      avgCost:  h.avgCost,
+      price:    Math.round(price * 100) / 100,
+      value:    Math.round(value * 100) / 100,
+      pnl:      Math.round(pnl * 100) / 100,
+      pnlPct:   Math.round(pnlPct * 100) / 100,
+      live:     prices[i] !== null,
+      dividend: h.dividend,
     }
   })
 
-  const totalCost    = HOLDINGS.reduce((s, h) => s + h.shares * h.avgCost, 0) + CASH
-  const totalPnl     = totalValue - totalCost
-  const totalPnlPct  = (totalPnl / totalCost) * 100
+  const totalCost   = HOLDINGS.reduce((s, h) => s + h.shares * h.avgCost, 0) + CASH
+  const totalPnl    = totalValue - totalCost
+  const totalPnlPct = (totalPnl / totalCost) * 100
 
   return {
     positions,
