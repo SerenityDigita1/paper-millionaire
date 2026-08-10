@@ -7,6 +7,32 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Valid email required.' }, { status: 400 })
   }
 
+  // Send Discord notification
+  if (process.env.DISCORD_FORMS_WEBHOOK_URL) {
+    try {
+      await fetch(process.env.DISCORD_FORMS_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          content: '📬 **New Change My Trajectory Email Signup**',
+          embeds: [
+            {
+              color: 16104956, // Gold-ish color
+              fields: [
+                { name: 'Email', value: email, inline: false },
+                { name: 'Client', value: 'Change My Trajectory', inline: true },
+                { name: 'Page', value: '/home', inline: true },
+              ],
+              timestamp: new Date().toISOString(),
+            },
+          ],
+        }),
+      })
+    } catch (discordError) {
+      console.error('[subscribe] Discord notification failed:', discordError)
+    }
+  }
+
   const apiKey       = process.env.BEEHIIV_API_KEY
   const pubId        = process.env.BEEHIIV_PUBLICATION_ID
 

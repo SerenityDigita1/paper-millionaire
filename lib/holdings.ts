@@ -51,10 +51,15 @@ export const HOLDINGS: Holding[] = [
     label: 'SentinelOne',
     note: 'AI-native cybersecurity — asymmetric bet',
   },
+  {
+    ticker: 'WRAP', shares: 406, avgCost: 2.46,
+    label: 'Wrap Technologies',
+    note: 'Counter-UAS / drone defense — exclusive US + NATO rights to Frenel Imaging physics-based sensing (WrapShield). Drone defense to complement drone offense.',
+  },
 ]
 
-// $2 base cash + $1,000 first monthly contribution (Jul 2026)
-export const CASH        = 1002
+// $1,000 Jul contribution deployed into WRAP; ~$3 remaining
+export const CASH        = 3
 export const START_VALUE = 100000
 export const START_DATE  = '2026-06-07'
 

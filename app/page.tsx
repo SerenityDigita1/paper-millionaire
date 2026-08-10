@@ -43,7 +43,7 @@ export default function Home() {
       <section className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
         {[
           { label: 'Starting Capital', value: '$100,000' },
-          { label: 'Positions',        value: '6 Stocks' },
+          { label: 'Positions',        value: '8 Stocks' },
           { label: 'Started',          value: 'June 2026' },
           { label: 'Goal',             value: '$10M' },
         ].map(s => (
