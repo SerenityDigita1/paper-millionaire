@@ -1,0 +1,62 @@
+name: Dividend Audit
+
+# The blue chips are the floor under the drone bets, and a floor only counts if
+# it is real. Live data cannot tell you a payment is MISSING - a payment that
+# never arrived simply is not in the feed, so there is nothing to notice.
+#
+# This diffs the live feed against an append-only ledger committed to the repo,
+# so a cut, a late payment, or a vanished record all surface instead of quietly
+# changing a number on the site.
+#
+# Requires repo secrets: DISCORD_BOT_TOKEN, DISCORD_ALERTS_CHANNEL
+
+on:
+  schedule:
+    # 14:00 UTC on the 1st of Jan / Apr / Jul / Oct. Quarterly is the right
+    # cadence: KO pays quarterly, and O monthly, so a quarter catches every
+    # holding at least once while staying quiet enough to be worth reading.
+    - cron: '0 14 1 1,4,7,10 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # the ledger is committed back after each audit
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Audit dividends
+        id: audit
+        continue-on-error: true   # a CUT exits 1, and we still want the ledger committed
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_ALERTS_CHANNEL: ${{ secrets.DISCORD_ALERTS_CHANNEL }}
+        run: node scripts/dividend-audit.mjs
+
+      - name: Commit the updated ledger
+        run: |
+          if [[ -n "$(git status --porcelain data/dividend-ledger.json)" ]]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/dividend-ledger.json
+            git commit -m "Dividend audit $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No ledger change."
+          fi
+
+      # Only fails the run after the ledger is safely committed, so a dividend
+      # cut is recorded even though it turns the run red.
+      - name: Flag anything serious
+        if: steps.audit.outcome == 'failure'
+        run: |
+          echo "::error::Dividend audit found a CUT, an OVERDUE payment, or a VANISHED record. Check #alerts."
+          exit 1
