@@ -33,13 +33,13 @@ export const HOLDINGS: Holding[] = [
     ticker: 'KO', shares: 100, avgCost: 79.48,
     label: 'Coca-Cola',
     note: '60+ consecutive years of dividend growth',
-    dividend: { perShare: 0.485, frequency: 'quarterly', drip: true },
+    dividend: { perShare: 0.53, frequency: 'quarterly', drip: true },
   },
   {
     ticker: 'O', shares: 215, avgCost: 60.84,
     label: 'Realty Income',
     note: 'The Monthly Dividend Company — commercial REIT',
-    dividend: { perShare: 0.268, frequency: 'monthly', drip: true },
+    dividend: { perShare: 0.271, frequency: 'monthly', drip: true },
   },
   {
     ticker: 'BRK-B', shares: 30, avgCost: 488.13,
@@ -62,6 +62,22 @@ export const HOLDINGS: Holding[] = [
 // taking cash from $3 to $10,921. Undeployed as of this episode.
 export const CASH        = 10921
 export const START_VALUE = 100000
+
+/**
+ * Everything paid into the account. Return is measured against this, not against
+ * START_VALUE - otherwise every deposit reads as performance. Keep in step with
+ * `contributions` in the pipeline's config/portfolio.json.
+ */
+export const CONTRIBUTIONS = [
+  { date: '2026-06-07', amount: 100000, note: 'starting capital' },
+  { date: '2026-07-11', amount: 1000,   note: 'first monthly contribution' },
+  { date: '2026-08-15', amount: 700,    note: 'deposit, ep010' },
+]
+
+export const CONTRIBUTED = CONTRIBUTIONS.reduce((s, c) => s + c.amount, 0)
+
+/** Dividends actually banked since START_DATE. DRIP is flagged but not auto-compounded. */
+export const DIVIDENDS_RECEIVED = 169.53
 export const START_DATE  = '2026-06-07'
 
 /** Projected annual dividend income across all DRIP holdings */
