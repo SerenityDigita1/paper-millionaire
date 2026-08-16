@@ -20,9 +20,9 @@ export const HOLDINGS: Holding[] = [
     note: 'Drone / AI robotics catalyst — JFB × XTEND merger (XTND on Nasdaq, Q3 2026)',
   },
   {
-    ticker: 'UMAC', shares: 800, avgCost: 24.47,
+    ticker: 'UMAC', shares: 500, avgCost: 27.69,
     label: 'Unusual Machines',
-    note: 'Drone-adjacent, NDAA-compliant, strategic investor in JFB × XTEND merger',
+    note: 'Drone-adjacent, NDAA-compliant, strategic investor in JFB × XTEND merger. Trimmed 300 sh @ $34.06 on 2026-08-15 to cut a 25.7% portfolio weight.',
   },
   {
     ticker: 'AVAV', shares: 50, avgCost: 185.92,
@@ -58,8 +58,9 @@ export const HOLDINGS: Holding[] = [
   },
 ]
 
-// $1,000 Jul contribution deployed into WRAP; ~$3 remaining
-export const CASH        = 3
+// Ep010 (2026-08-15): trimmed 300 UMAC @ $34.06 for $10,218 and deposited $700,
+// taking cash from $3 to $10,921. Undeployed as of this episode.
+export const CASH        = 10921
 export const START_VALUE = 100000
 export const START_DATE  = '2026-06-07'
 

@@ -1,4 +1,4 @@
-import { HOLDINGS, CASH, type Dividend } from './holdings'
+import { HOLDINGS, CASH, START_VALUE, type Dividend } from './holdings'
 
 export type Position = {
   ticker:    string
@@ -66,9 +66,12 @@ export async function getPortfolioData(): Promise<PortfolioData> {
     }
   })
 
-  const totalCost   = HOLDINGS.reduce((s, h) => s + h.shares * h.avgCost, 0) + CASH
-  const totalPnl    = totalValue - totalCost
-  const totalPnlPct = (totalPnl / totalCost) * 100
+  // Measure against the $100,000 the experiment started with, which is what the
+  // episodes quote. Adding CASH to the cost basis broke once a trade was closed:
+  // realised profit lands in cash, so it inflated the denominator and reported
+  // ep010's +6.62% as roughly break-even.
+  const totalPnl    = totalValue - START_VALUE
+  const totalPnlPct = (totalPnl / START_VALUE) * 100
 
   return {
     positions,
