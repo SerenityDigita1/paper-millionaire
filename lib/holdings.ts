@@ -17,7 +17,7 @@ export const HOLDINGS: Holding[] = [
   {
     ticker: 'JFB', shares: 6588, avgCost: 5.40,
     label: 'JFB Construction Holdings',
-    note: 'Drone / AI robotics catalyst — JFB × XTEND merger (XTND on Nasdaq, Q3 2026)',
+    note: 'Drone / AI robotics catalyst. SEC declared the S-4 effective 11 Aug 2026; closing expected 1 Sept. Becomes XTEND AI Robotics on the NYSE as XTND, 1:1 conversion, JFB holders take ~30% of the combined company.',
   },
   {
     ticker: 'UMAC', shares: 500, avgCost: 27.69,
