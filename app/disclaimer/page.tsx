@@ -46,7 +46,10 @@ export default function DisclaimerPage() {
         <section>
           <h2 className="text-white font-bold text-lg mb-3">Affiliates &amp; Sponsors</h2>
           <p>
-            We may mention third-party platforms (such as paper trading platforms) by name. Any
+            This site is a participant in the Amazon Services LLC Associates Program, an affiliate
+            advertising program designed to provide a means for sites to earn advertising fees by
+            advertising and linking to Amazon.com. We may earn from qualifying purchases. We may
+            mention third-party platforms (such as paper trading platforms) by name. Any
             mentions are based on personal use and are not paid placements unless explicitly stated.
             We do not accept sponsored stock picks or paid promotions disguised as editorial content.
           </p>

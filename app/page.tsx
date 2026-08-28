@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import EmailCapture from '@/components/EmailCapture'
+import Affiliate from '@/components/Affiliate'
 import { EPISODES } from '@/lib/episodes'
 
 export default function Home() {
@@ -106,6 +107,48 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* What we actually use */}
+      <section className="mb-20">
+        <h2 className="text-white font-mono text-lg tracking-wide mb-8">What we actually use</h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="bg-card border border-white/10 rounded-lg p-6">
+            <h3 className="text-white font-bold mb-2">
+              <Affiliate search="The Psychology of Money Morgan Housel">The Psychology of Money</Affiliate>
+            </h3>
+            <p className="text-white/50 text-sm leading-relaxed">
+              Morgan Housel on why people panic-sell. The reminder we come back to when a week goes against us.
+            </p>
+          </div>
+          <div className="bg-card border border-white/10 rounded-lg p-6">
+            <h3 className="text-white font-bold mb-2">
+              <Affiliate search="The Intelligent Investor Benjamin Graham">The Intelligent Investor</Affiliate>
+            </h3>
+            <p className="text-white/50 text-sm leading-relaxed">
+              Benjamin Graham&apos;s margin of safety — the framework behind how we size a thesis, not a hot take.
+            </p>
+          </div>
+          <div className="bg-card border border-white/10 rounded-lg p-6">
+            <h3 className="text-white font-bold mb-2">
+              <Affiliate search="trading journal notebook">A trading journal notebook</Affiliate>
+            </h3>
+            <p className="text-white/50 text-sm leading-relaxed">
+              Every decision written down before the market opens. If it isn&apos;t in the journal, it didn&apos;t happen.
+            </p>
+          </div>
+          <div className="bg-card border border-white/10 rounded-lg p-6">
+            <h3 className="text-white font-bold mb-2">
+              <Affiliate search="24 inch computer monitor">A second monitor</Affiliate>
+            </h3>
+            <p className="text-white/50 text-sm leading-relaxed">
+              Charts on one screen, the thesis on the other. Nothing fancy — just room to think.
+            </p>
+          </div>
+        </div>
+        <p className="text-white/30 text-xs font-mono mt-6">
+          Amazon Associates, we earn on qualifying purchases at no extra cost. Not financial advice. Not sponsored stock picks.
+        </p>
       </section>
 
       {/* CTA banner */}
