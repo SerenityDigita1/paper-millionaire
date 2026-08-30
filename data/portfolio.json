@@ -1,0 +1,20 @@
+{
+  "starting_value": 100000,
+  "cash": 10921,
+  "last_updated": "2026-08-15",
+  "contributions": [
+    { "date": "2026-06-07", "amount": 100000, "note": "starting capital" },
+    { "date": "2026-07-11", "amount": 1000, "note": "first monthly contribution" },
+    { "date": "2026-08-15", "amount": 700, "note": "deposit, ep010" }
+  ],
+  "holdings": [
+    { "ticker": "JFB", "shares": 6588, "avgCost": 5.4 },
+    { "ticker": "UMAC", "shares": 500, "avgCost": 27.69 },
+    { "ticker": "AVAV", "shares": 50, "avgCost": 185.92 },
+    { "ticker": "KO", "shares": 100, "avgCost": 79.48 },
+    { "ticker": "O", "shares": 215, "avgCost": 60.84 },
+    { "ticker": "BRK-B", "shares": 30, "avgCost": 488.13 },
+    { "ticker": "S", "shares": 25, "avgCost": 15.19 },
+    { "ticker": "WRAP", "shares": 406, "avgCost": 2.46 }
+  ]
+}

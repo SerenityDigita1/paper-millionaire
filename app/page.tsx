@@ -4,7 +4,7 @@ import Affiliate from '@/components/Affiliate'
 import { EPISODES } from '@/lib/episodes'
 
 export default function Home() {
-  const latest = EPISODES[EPISODES.length - 1]
+  const latest = EPISODES.reduce((a, b) => (a.number > b.number ? a : b))
 
   return (
     <div className="max-w-6xl mx-auto px-6">
