@@ -8,6 +8,13 @@ export type Episode = {
 
 export const EPISODES: Episode[] = [
   {
+    number:      12,
+    title:       'The Merger Closes Monday. Cash Still Sitting.',
+    date:        '2026-08-30',
+    youtubeId:   'LYlLpW6C_EE',
+    description: 'Book $100,433. Up $432 vs the $100K start, down 1.25% on $101,700 paid in. No new trades. JFB +6.9% into a Sept 1 XTEND close. Cash $10,921 idle a third week.',
+  },
+  {
     number:      11,
     title:       'I Sold At The Top And Still Lost Money.',
     date:        '2026-08-22',
