@@ -8,6 +8,34 @@ export type Episode = {
 
 export const EPISODES: Episode[] = [
   {
+    number:      12,
+    title:       'The Merger Closes Monday. Cash Still Sitting.',
+    date:        '2026-08-30',
+    youtubeId:   'LYlLpW6C_EE',
+    description: 'Book $100,433. Up $432 vs the $100K start, down 1.25% on $101,700 paid in. No new trades. JFB +6.9% into a Sept 1 XTEND close. Cash $10,921 idle a third week.',
+  },
+  {
+    number:      11,
+    title:       'I Sold At The Top And Still Lost Money.',
+    date:        '2026-08-22',
+    youtubeId:   'rXh5AY1H_S4',
+    description: 'UMAC trim vindicated in seven days (fell 19.5%). Portfolio $100,949, -0.74% on capital paid in. JFB x XTEND S-4 effective Aug 11, close expected Sept 1, becomes XTND. Not a payday.',
+  },
+  {
+    number:      10,
+    title:       'I Finally Sold Something. +78% In 6 Weeks.',
+    date:        '2026-08-16',
+    youtubeId:   'kUyTmtVU7_8',
+    description: 'Trimmed 300 UMAC at $34.06 (bought at $19.10). Portfolio $106,618. Cash $3 to $10,921.',
+  },
+  {
+    number:      9,
+    title:       'Down 12% to Almost Even in 2 Weeks. I Did Nothing.',
+    date:        '2026-08-10',
+    youtubeId:   'XU1oBikMoec',
+    description: 'Two weeks after the -12.3% low at $87,686, $98,769. Recovery carried by the drone names. Cash is three dollars.',
+  },
+  {
     number:      8,
     title:       'WRAP Craters 22%... UMAC Just Had Its BEST Week Ever',
     date:        '2026-07-25',

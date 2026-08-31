@@ -1,3 +1,5 @@
+import portfolio from '@/data/portfolio.json'
+
 export type Dividend = {
   perShare:  number
   frequency: 'monthly' | 'quarterly'
@@ -13,66 +15,77 @@ export type Holding = {
   dividend?: Dividend
 }
 
-export const HOLDINGS: Holding[] = [
-  {
-    ticker: 'JFB', shares: 6588, avgCost: 5.40,
+type HoldingOverlay = {
+  label:     string
+  note:      string
+  dividend?: Dividend
+}
+
+/** Labels, notes, and dividend overlay. Shares, avgCost, cash, and contributions come from data/portfolio.json. */
+const OVERLAY: Record<string, HoldingOverlay> = {
+  JFB: {
     label: 'JFB Construction Holdings',
     note: 'Drone / AI robotics catalyst. SEC declared the S-4 effective 11 Aug 2026; closing expected 1 Sept. Becomes XTEND AI Robotics on the NYSE as XTND, 1:1 conversion, JFB holders take ~30% of the combined company.',
   },
-  {
-    ticker: 'UMAC', shares: 500, avgCost: 27.69,
+  UMAC: {
     label: 'Unusual Machines',
-    note: 'Drone-adjacent, NDAA-compliant, strategic investor in JFB × XTEND merger. Trimmed 300 sh @ $34.06 on 2026-08-15 to cut a 25.7% portfolio weight.',
+    note: 'Drone-adjacent, NDAA-compliant, strategic investor in JFB x XTEND merger. Trimmed 300 sh @ $34.06 on 2026-08-15 to cut a 25.7% portfolio weight.',
   },
-  {
-    ticker: 'AVAV', shares: 50, avgCost: 185.92,
+  AVAV: {
     label: 'AeroVironment',
     note: 'Military unmanned aircraft systems',
   },
-  {
-    ticker: 'KO', shares: 100, avgCost: 79.48,
+  KO: {
     label: 'Coca-Cola',
     note: '60+ consecutive years of dividend growth',
     dividend: { perShare: 0.53, frequency: 'quarterly', drip: true },
   },
-  {
-    ticker: 'O', shares: 215, avgCost: 60.84,
+  O: {
     label: 'Realty Income',
     note: 'The Monthly Dividend Company — commercial REIT',
     dividend: { perShare: 0.271, frequency: 'monthly', drip: true },
   },
-  {
-    ticker: 'BRK-B', shares: 30, avgCost: 488.13,
+  'BRK-B': {
     label: 'Berkshire Hathaway B',
     note: 'Capital preservation anchor — Greg Abel era',
   },
-  {
-    ticker: 'S', shares: 25, avgCost: 15.19,
+  S: {
     label: 'SentinelOne',
     note: 'AI-native cybersecurity — asymmetric bet',
   },
-  {
-    ticker: 'WRAP', shares: 406, avgCost: 2.46,
+  WRAP: {
     label: 'Wrap Technologies',
     note: 'Counter-UAS / drone defense — exclusive US + NATO rights to Frenel Imaging physics-based sensing (WrapShield). Drone defense to complement drone offense.',
   },
-]
+}
+
+export const HOLDINGS: Holding[] = portfolio.holdings.map((row) => {
+  const meta = OVERLAY[row.ticker]
+  if (!meta) {
+    throw new Error(`Missing holdings overlay for ticker ${row.ticker}`)
+  }
+  const holding: Holding = {
+    ticker:  row.ticker,
+    shares:  row.shares,
+    avgCost: row.avgCost,
+    label:   meta.label,
+    note:    meta.note,
+  }
+  if (meta.dividend) holding.dividend = meta.dividend
+  return holding
+})
 
 // Ep010 (2026-08-15): trimmed 300 UMAC @ $34.06 for $10,218 and deposited $700,
 // taking cash from $3 to $10,921. Undeployed as of this episode.
-export const CASH        = 10921
-export const START_VALUE = 100000
+export const CASH        = portfolio.cash
+export const START_VALUE = portfolio.starting_value
 
 /**
  * Everything paid into the account. Return is measured against this, not against
  * START_VALUE - otherwise every deposit reads as performance. Keep in step with
- * `contributions` in the pipeline's config/portfolio.json.
+ * `contributions` in data/portfolio.json.
  */
-export const CONTRIBUTIONS = [
-  { date: '2026-06-07', amount: 100000, note: 'starting capital' },
-  { date: '2026-07-11', amount: 1000,   note: 'first monthly contribution' },
-  { date: '2026-08-15', amount: 700,    note: 'deposit, ep010' },
-]
+export const CONTRIBUTIONS = portfolio.contributions
 
 export const CONTRIBUTED = CONTRIBUTIONS.reduce((s, c) => s + c.amount, 0)
 
