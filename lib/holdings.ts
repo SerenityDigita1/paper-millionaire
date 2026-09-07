@@ -25,7 +25,7 @@ type HoldingOverlay = {
 const OVERLAY: Record<string, HoldingOverlay> = {
   JFB: {
     label: 'JFB Construction Holdings',
-    note: 'Drone / AI robotics catalyst. SEC declared the S-4 effective 11 Aug 2026; closing expected 1 Sept. Becomes XTEND AI Robotics on the NYSE as XTND, 1:1 conversion, JFB holders take ~30% of the combined company.',
+    note: 'Drone / AI robotics catalyst. Still JFB Construction Holdings. S-4 effective Aug 11; expected Sept 1 close slipped — still trading as JFB, Q3 window not expired. Becomes XTEND AI Robotics (NYSE: XTND) on close, 1:1; holders ~30% of the combined company.',
   },
   UMAC: {
     label: 'Unusual Machines',
