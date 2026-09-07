@@ -1,7 +1,7 @@
 {
   "starting_value": 100000,
   "cash": 10921,
-  "last_updated": "2026-08-15",
+  "last_updated": "2026-09-05",
   "contributions": [
     { "date": "2026-06-07", "amount": 100000, "note": "starting capital" },
     { "date": "2026-07-11", "amount": 1000, "note": "first monthly contribution" },
