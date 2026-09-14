@@ -131,6 +131,28 @@ export default async function PortfolioPage() {
         </div>
       </div>
 
+      {/* Merger note */}
+      <div className="mt-10 bg-card border border-gold/20 rounded-xl p-6">
+        <p className="text-gold font-mono text-xs tracking-widest uppercase mb-2">JFB → XTND</p>
+        <h2 className="text-white font-bold mb-3">Same paper position, new listing</h2>
+        <p className="text-white/50 text-sm leading-relaxed mb-3">
+          This slot was held as JFB Construction Holdings. The business combination with XTEND
+          closed in early September 2026. The combined company, XTEND AI Robotics, Inc., now
+          trades on the NYSE as <span className="text-gold font-mono">XTND</span>. JFB ceased
+          trading on Nasdaq.
+        </p>
+        <p className="text-white/50 text-sm leading-relaxed mb-3">
+          For this paper tracker, the same 6,588 shares carried over 1:1 at the original $5.40
+          average cost. No new trade was booked — only the listing identity changed.
+        </p>
+        <p className="text-white/30 text-xs font-mono">
+          Paper portfolio. Public experiment. Not a recommendation.{' '}
+          <a href="/disclaimer" className="underline hover:text-white/50 transition-colors">
+            Full disclaimer
+          </a>
+        </p>
+      </div>
+
       <p className="text-white/20 text-xs font-mono mt-6 text-center">
         Prices refresh every 5 minutes. This is a paper portfolio — not real money.{' '}
         <a href="/disclaimer" className="underline hover:text-white/40 transition-colors">
