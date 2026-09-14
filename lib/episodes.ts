@@ -12,7 +12,7 @@ export const EPISODES: Episode[] = [
     title:       'I Was Wrong About Monday. The Merger Didn\'t Close.',
     date:        '2026-09-05',
     youtubeId:   'oHyQ3CG6AkY',
-    description: 'Book $100,943. Up 0.94% vs the $100K start, down 0.74% on $101,700 paid in. Sept 1 came and went — JFB still trades as JFB (6,588 sh), no XTND conversion. Cash $10,921 idle a fourth week. No new trades.',
+    description: 'Book $100,943. Up 0.94% vs the $100K start, down 0.74% on $101,700 paid in. Sept 1 came and went — JFB still trades as JFB (6,588 sh), no XTND conversion. Cash $10,921 idle a fourth week. No new trades. Update: the combination closed after this episode; the live tracker now lists XTND.',
   },
   {
     number:      12,
