@@ -25,11 +25,11 @@ type HoldingOverlay = {
 const OVERLAY: Record<string, HoldingOverlay> = {
   XTND: {
     label: 'XTEND AI Robotics',
-    note: 'Post-merger listing (NYSE: XTND). Formerly JFB Construction Holdings — Sept 2026 business combination with XTEND, 1:1. Combined company is XTEND AI Robotics, Inc.; former JFB holders ~30%.',
+    note: 'Was JFB Construction Holdings. Merger closed 2026-09-03, 1:1 conversion, trades on the NYSE as XTND since 2026-09-04. Opened at $6.19, gave it all back within four sessions. Drone / defense robotics.',
   },
   UMAC: {
     label: 'Unusual Machines',
-    note: 'Drone-adjacent, NDAA-compliant, strategic investor in the completed JFB / XTEND combination (now XTND). Trimmed 300 sh @ $34.06 on 2026-08-15 to cut a 25.7% portfolio weight.',
+    note: 'Drone-adjacent, NDAA-compliant, strategic investor in the XTEND merger (formerly JFB). Trimmed 300 sh @ $34.06 on 2026-08-15 to cut a 25.7% portfolio weight.',
   },
   AVAV: {
     label: 'AeroVironment',

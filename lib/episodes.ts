@@ -8,11 +8,18 @@ export type Episode = {
 
 export const EPISODES: Episode[] = [
   {
+    number:      14,
+    title:       "The Merger Closed. I Said It Hadn't. Now I'm Under $100K.",
+    date:        '2026-09-13',
+    youtubeId:   'Xx1wHVg9MX4',
+    description: 'Book $98,420, first close under $100K. Down 4.17% on $102,700 paid in. Wrong about the merger twice, in opposite directions: it closed Sept 3. XTND opened $6.19, $4.49 four sessions later. Cash $11,921 and staying there on purpose.',
+  },
+  {
     number:      13,
-    title:       'I Was Wrong About Monday. The Merger Didn\'t Close.',
+    title:       "I Was Wrong About Monday. The Merger Didn't Close.",
     date:        '2026-09-05',
     youtubeId:   'oHyQ3CG6AkY',
-    description: 'Book $100,943. Up 0.94% vs the $100K start, down 0.74% on $101,700 paid in. Sept 1 came and went — JFB still trades as JFB (6,588 sh), no XTND conversion. Cash $10,921 idle a fourth week. No new trades. Update: the combination closed after this episode; the live tracker now lists XTND.',
+    description: 'Book $100,943, -0.74% on $101,700 paid in. Said the merger closes Sept 1; the ticker still read JFB. SentinelOne -12.5% on the week and still the best winner since entry. Cash idle a fourth week.',
   },
   {
     number:      12,
