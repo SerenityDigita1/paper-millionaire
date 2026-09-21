@@ -8,6 +8,13 @@ export type Episode = {
 
 export const EPISODES: Episode[] = [
   {
+    number:      15,
+    title:       "My Best Trade Is Up 48%. It's Worth $563.",
+    date:        '2026-09-21',
+    youtubeId:   'pUlawLqrfg4',
+    description: 'Book $98,766, -3.83% on $102,700 paid in. SentinelOne +14% on the week, +48% since entry, and it is 25 shares. The best trade in the book is 0.6% of the book. Sizing, not stock-picking. Cash $11,921, unchanged.',
+  },
+  {
     number:      14,
     title:       "The Merger Closed. I Said It Hadn't. Now I'm Under $100K.",
     date:        '2026-09-13',
