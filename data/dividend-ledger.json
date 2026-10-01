@@ -1,22 +1,5 @@
 {
-  "payments": {
-    "KO": [
-      {
-        "date": "2026-06-15",
-        "perShare": 0.53
-      }
-    ],
-    "O": [
-      {
-        "date": "2026-06-30",
-        "perShare": 0.271
-      },
-      {
-        "date": "2026-07-31",
-        "perShare": 0.271
-      }
-    ]
-  },
+  "payments": {},
   "audits": [
     {
       "date": "2026-08-16",
@@ -27,6 +10,11 @@
       "date": "2026-08-16",
       "findings": 0,
       "received": 169.53
+    },
+    {
+      "date": "2026-10-01",
+      "findings": 0,
+      "received": 0
     }
   ]
 }
