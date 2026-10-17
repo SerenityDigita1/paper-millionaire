@@ -1,7 +1,16 @@
 import { CASH, annualDividendIncome, monthlyDividendIncome } from '@/lib/holdings'
 import { getPortfolioData, type Position } from '@/lib/prices'
+import JsonLd from '@/components/JsonLd'
+import { breadcrumbSchema } from '@/lib/schema'
+import { pageMetadata } from '@/lib/seo'
 
 export const revalidate = 300
+
+export const metadata = pageMetadata({
+  title: 'Portfolio',
+  description: 'Live paper portfolio for the $100K experiment. Simulated prices and positions, not financial advice.',
+  path: '/portfolio',
+})
 
 function pnlColor(n: number) {
   if (n > 0) return 'text-green'
@@ -20,6 +29,7 @@ export default async function PortfolioPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
+      <JsonLd data={breadcrumbSchema('Portfolio', '/portfolio')} />
 
       <div className="mb-10">
         <p className="text-gold font-mono text-xs tracking-widest uppercase mb-2">Live Tracker</p>

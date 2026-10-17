@@ -1,13 +1,20 @@
 import Link from 'next/link'
 import EmailCapture from '@/components/EmailCapture'
 import Affiliate from '@/components/Affiliate'
+import JsonLd from '@/components/JsonLd'
+import YouTubeEmbed from '@/components/YouTubeEmbed'
 import { EPISODES } from '@/lib/episodes'
+import { homeSchema } from '@/lib/schema'
+import { homeMetadata } from '@/lib/seo'
+
+export const metadata = homeMetadata
 
 export default function Home() {
   const latest = EPISODES.reduce((a, b) => (a.number > b.number ? a : b))
 
   return (
     <div className="max-w-6xl mx-auto px-6">
+      <JsonLd data={homeSchema()} />
 
       {/* Hero */}
       <section className="pt-24 pb-20 text-center fade-up">
@@ -65,13 +72,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="aspect-video rounded-xl overflow-hidden border border-white/10">
-            <iframe
-              className="w-full h-full"
-              src={`https://www.youtube.com/embed/${latest.youtubeId}`}
-              title={latest.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            <YouTubeEmbed id={latest.youtubeId} title={latest.title} lazy />
           </div>
           <p className="text-white/50 text-sm mt-3 font-mono">
             EP. {String(latest.number).padStart(3, '0')} — {latest.title}
