@@ -1,5 +1,26 @@
 # Backtrack
 
+## Web Analytics
+
+Recorded before switching the root layout to `@vercel/analytics/next` on 2026-10-17.
+
+- Pre-change SHA: `84c9b6a` (`84c9b6a7fd6c7c78a0b904f0bbdbff004aaccf1b` on `master`)
+
+If this pull request is still unmerged, close the draft and delete `cursor/vercel-web-analytics-1543`. The site stays on `84c9b6a`.
+
+If it was merged, check out `master`, pull, and revert the analytics commit:
+
+```
+git checkout master
+git pull origin master
+git revert <analytics-commit-sha>
+git push origin master
+```
+
+Vercel Instant Rollback: open the project for www.changemytrajectory.com, find the deployment built from `84c9b6a`, and roll production back to it.
+
+## SEO changes
+
 Recorded before the SEO changes on 2026-10-17.
 
 - Branch at record time: `master`
