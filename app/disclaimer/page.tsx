@@ -1,6 +1,17 @@
+import JsonLd from '@/components/JsonLd'
+import { breadcrumbSchema } from '@/lib/schema'
+import { pageMetadata } from '@/lib/seo'
+
+export const metadata = pageMetadata({
+  title: 'Disclaimer',
+  description: 'Paper trades only. Entertainment and education, not financial advice.',
+  path: '/disclaimer',
+})
+
 export default function DisclaimerPage() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-16">
+      <JsonLd data={breadcrumbSchema('Disclaimer', '/disclaimer')} />
       <p className="text-gold font-mono text-xs tracking-widest uppercase mb-4">Legal</p>
       <h1 className="text-4xl font-bold text-white mb-8">Disclaimer</h1>
 

@@ -1,9 +1,22 @@
 import { EPISODES } from '@/lib/episodes'
 import EmailCapture from '@/components/EmailCapture'
+import JsonLd from '@/components/JsonLd'
+import YouTubeEmbed from '@/components/YouTubeEmbed'
+import { episodesSchema } from '@/lib/schema'
+import { pageMetadata } from '@/lib/seo'
+
+export const metadata = pageMetadata({
+  title: 'Episodes',
+  description: 'Every episode of the $100K experiment, in order. Weekly paper portfolio updates.',
+  path: '/episodes',
+})
 
 export default function EpisodesPage() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-16">
+      <JsonLd data={episodesSchema()} />
+      <link rel="preconnect" href="https://www.youtube.com" />
+      <link rel="preconnect" href="https://i.ytimg.com" />
       <div className="mb-10">
         <p className="text-gold font-mono text-xs tracking-widest uppercase mb-2">All Episodes</p>
         <h1 className="text-4xl font-bold text-white mb-2">The Archive</h1>
@@ -11,7 +24,7 @@ export default function EpisodesPage() {
       </div>
 
       <div className="space-y-12">
-        {[...EPISODES].reverse().map(ep => (
+        {[...EPISODES].reverse().map((ep, index) => (
           <article key={ep.number} className="border-b border-white/10 pb-12">
             <div className="flex items-center gap-3 mb-4">
               <span className="bg-gold text-navy font-mono text-xs font-bold px-3 py-1 rounded">
@@ -25,13 +38,7 @@ export default function EpisodesPage() {
 
             {ep.youtubeId !== 'REPLACE_WITH_VIDEO_ID' ? (
               <div className="aspect-video rounded-xl overflow-hidden border border-white/10">
-                <iframe
-                  className="w-full h-full"
-                  src={`https://www.youtube.com/embed/${ep.youtubeId}`}
-                  title={ep.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+                <YouTubeEmbed id={ep.youtubeId} title={ep.title} lazy={index !== 0} />
               </div>
             ) : (
               <div className="aspect-video rounded-xl border border-white/10 bg-card flex items-center justify-center">
