@@ -14,12 +14,13 @@ export function pageMetadata({
   path: PagePath
   absoluteTitle?: boolean
 }): Metadata {
+  const fullTitle = absoluteTitle ? title : `${title} | Paper Millionaire`
   return {
     title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: path },
     openGraph: {
-      title,
+      title: fullTitle,
       description,
       url: path,
       siteName: 'Change My Trajectory',
@@ -27,7 +28,7 @@ export function pageMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: fullTitle,
       description,
     },
   }
