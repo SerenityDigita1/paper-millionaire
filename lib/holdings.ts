@@ -57,6 +57,14 @@ const OVERLAY: Record<string, HoldingOverlay> = {
     label: 'Wrap Technologies',
     note: 'Counter-UAS / drone defense — exclusive US + NATO rights to Frenel Imaging physics-based sensing (WrapShield). Drone defense to complement drone offense.',
   },
+  SOUN: {
+    label: 'SoundHound AI',
+    note: 'Bought 2026-10-20 with half the XTND sale proceeds: 1,363 sh @ $4.70. Rules on closes only: cut all under $4.25, trim half at $7.00 then raise the cut to entry, no adds to a loser.',
+  },
+  DPRO: {
+    label: 'Draganfly',
+    note: 'Bought 2026-10-20 with half the XTND sale proceeds: 1,789 sh @ $3.58. Rules on closes only: cut all under $3.05, trim half at $5.50 then raise the cut to entry, no adds to a loser.',
+  },
 }
 
 export const HOLDINGS: Holding[] = portfolio.holdings.map((row) => {

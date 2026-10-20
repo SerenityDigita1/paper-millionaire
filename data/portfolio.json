@@ -1,7 +1,7 @@
 {
   "starting_value": 100000,
-  "cash": 11921,
-  "last_updated": "2026-09-13",
+  "cash": 12923.94,
+  "last_updated": "2026-10-20",
   "contributions": [
     {
       "date": "2026-06-07",
@@ -22,14 +22,14 @@
       "date": "2026-09-13",
       "amount": 1000,
       "note": "deposit, ep014 - held in cash, not deployed (waiting for better prices)"
+    },
+    {
+      "date": "2026-10-02",
+      "amount": 1000,
+      "note": "deposit, ep017 - held in cash, not deployed (waiting for better prices)"
     }
   ],
   "holdings": [
-    {
-      "ticker": "XTND",
-      "shares": 6588,
-      "avgCost": 5.4
-    },
     {
       "ticker": "UMAC",
       "shares": 500,
@@ -42,12 +42,12 @@
     },
     {
       "ticker": "KO",
-      "shares": 100,
+      "shares": 101.2604,
       "avgCost": 79.48
     },
     {
       "ticker": "O",
-      "shares": 215,
+      "shares": 218.919,
       "avgCost": 60.84
     },
     {
@@ -64,6 +64,16 @@
       "ticker": "WRAP",
       "shares": 406,
       "avgCost": 2.46
+    },
+    {
+      "ticker": "SOUN",
+      "shares": 1363,
+      "avgCost": 4.7
+    },
+    {
+      "ticker": "DPRO",
+      "shares": 1789,
+      "avgCost": 3.58
     }
   ]
 }

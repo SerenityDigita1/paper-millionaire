@@ -141,19 +141,19 @@ export default async function PortfolioPage() {
         </div>
       </div>
 
-      {/* Merger note */}
+      {/* XTND sale note */}
       <div className="mt-10 bg-card border border-gold/20 rounded-xl p-6">
-        <p className="text-gold font-mono text-xs tracking-widest uppercase mb-2">JFB → XTND</p>
-        <h2 className="text-white font-bold mb-3">Same paper position, new listing</h2>
+        <p className="text-gold font-mono text-xs tracking-widest uppercase mb-2">Closed position: XTND</p>
+        <h2 className="text-white font-bold mb-3">Stuck to the rule: sold XTEND at the $2.00 floor</h2>
         <p className="text-white/50 text-sm leading-relaxed mb-3">
-          This slot was held as JFB Construction Holdings. The business combination with XTEND
-          closed in early September 2026. The combined company, XTEND AI Robotics, Inc., now
-          trades on the NYSE as <span className="text-gold font-mono">XTND</span>. JFB ceased
-          trading on Nasdaq.
+          The rule was set out loud on the channel: if XTEND AI Robotics closes under $2.00, sell all
+          of it. On October 20, 2026 it closed at $1.945. All 6,588 paper shares were sold at that close
+          for $12,813.66.
         </p>
         <p className="text-white/50 text-sm leading-relaxed mb-3">
-          For this paper tracker, the same 6,588 shares carried over 1:1 at the original $5.40
-          average cost. No new trade was booked — only the listing identity changed.
+          Average cost was $5.40 a share ($35,575.20), so the realized loss is $22,761.54. The proceeds
+          were split evenly into two new paper positions at the same close: 1,363 SoundHound AI (SOUN) at $4.70 and 1,789 Draganfly (DPRO) at $3.58, with the $2.94 left over kept in cash. Each has its own written cut and trim rules. The position started as JFB Construction Holdings and
+          carried over 1:1 in the September 2026 XTEND merger.
         </p>
         <p className="text-white/30 text-xs font-mono">
           Paper portfolio. Public experiment. Not a recommendation.{' '}
@@ -164,7 +164,7 @@ export default async function PortfolioPage() {
       </div>
 
       <p className="text-white/20 text-xs font-mono mt-6 text-center">
-        Prices refresh every 5 minutes. This is a paper portfolio — not real money.{' '}
+        Prices refresh every 5 minutes. This is a paper portfolio, not real money.{' '}
         <a href="/disclaimer" className="underline hover:text-white/40 transition-colors">
           Full disclaimer
         </a>
