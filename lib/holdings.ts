@@ -29,33 +29,33 @@ const OVERLAY: Record<string, HoldingOverlay> = {
   },
   UMAC: {
     label: 'Unusual Machines',
-    note: 'Drone-adjacent, NDAA-compliant, strategic investor in the XTEND merger (formerly JFB). Trimmed 300 sh @ $34.06 on 2026-08-15 to cut a 25.7% portfolio weight.',
+    note: 'Drone-adjacent, NDAA-compliant, strategic investor in the XTEND merger (formerly JFB). Trimmed 300 sh @ $34.06 on 2026-08-15 to cut a 25.7% portfolio weight. Rules on closes only (set 2026-10-24): cut all under $14.50, trim half at $24.00, no adds to a loser.',
   },
   AVAV: {
     label: 'AeroVironment',
-    note: 'Military unmanned aircraft systems',
+    note: 'Military unmanned aircraft systems. Rules on closes only (set 2026-10-24): cut all under $112, trim half at $160, no adds to a loser.',
   },
   KO: {
     label: 'Coca-Cola',
-    note: '60+ consecutive years of dividend growth',
+    note: '60+ consecutive years of dividend growth. Ballast. Rules on closes only (set 2026-10-24): cut all under $84, no trim, no adds to a loser.',
     dividend: { perShare: 0.53, frequency: 'quarterly', drip: true },
   },
   O: {
     label: 'Realty Income',
-    note: 'The Monthly Dividend Company — commercial REIT',
+    note: 'The Monthly Dividend Company — commercial REIT. Ballast. Rules on closes only (set 2026-10-24): cut all under $52.50, optional trim half at $65, no adds to a loser.',
     dividend: { perShare: 0.271, frequency: 'monthly', drip: true },
   },
   'BRK-B': {
     label: 'Berkshire Hathaway B',
-    note: 'Capital preservation anchor — Greg Abel era',
+    note: 'Capital preservation anchor — Greg Abel era. Ballast. Rules on closes only (set 2026-10-24): cut all under $495, no trim, no adds.',
   },
   S: {
     label: 'SentinelOne',
-    note: 'AI-native cybersecurity — asymmetric bet',
+    note: 'AI-native cybersecurity — asymmetric bet. Rules on closes only (set 2026-10-24): cut all under $19.50, trim half at $30, no adds.',
   },
   WRAP: {
     label: 'Wrap Technologies',
-    note: 'Counter-UAS / drone defense — exclusive US + NATO rights to Frenel Imaging physics-based sensing (WrapShield). Drone defense to complement drone offense.',
+    note: 'Counter-UAS / drone defense — exclusive US + NATO rights to Frenel Imaging physics-based sensing (WrapShield). Drone defense to complement drone offense. Rules on closes only (set 2026-10-24): cut all under $1.05, no adds to a loser.',
   },
   SOUN: {
     label: 'SoundHound AI',
