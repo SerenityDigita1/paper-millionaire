@@ -59,7 +59,7 @@ const OVERLAY: Record<string, HoldingOverlay> = {
   },
   SOUN: {
     label: 'SoundHound AI',
-    note: 'Bought 2026-10-20 with half the XTND sale proceeds: 1,363 sh @ $4.70. Rules on closes only: cut all under $4.25, trim half at $7.00 then raise the cut to entry, no adds to a loser.',
+    note: 'Bought 2026-10-20 with half the XTND sale proceeds: 1,363 sh @ $4.70. Sold half (681 sh) 2026-11-02 at $4.275 for $2,911.28; 682 sh remain. Rules on closes only: cut all under $4.25, trim half at $7.00 then raise the cut to entry, no adds to a loser.',
   },
   DPRO: {
     label: 'Draganfly',

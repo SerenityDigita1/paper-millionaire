@@ -1,7 +1,7 @@
 {
   "starting_value": 100000,
-  "cash": 12923.94,
-  "last_updated": "2026-10-20",
+  "cash": 16835.22,
+  "last_updated": "2026-11-02",
   "contributions": [
     {
       "date": "2026-06-07",
@@ -27,6 +27,11 @@
       "date": "2026-10-02",
       "amount": 1000,
       "note": "deposit, ep017 - held in cash, not deployed (waiting for better prices)"
+    },
+    {
+      "date": "2026-11-02",
+      "amount": 1000,
+      "note": "November 2026 monthly deposit, ep020 - held in cash"
     }
   ],
   "holdings": [
@@ -47,7 +52,7 @@
     },
     {
       "ticker": "O",
-      "shares": 218.919,
+      "shares": 219.965,
       "avgCost": 60.84
     },
     {
@@ -67,7 +72,7 @@
     },
     {
       "ticker": "SOUN",
-      "shares": 1363,
+      "shares": 682,
       "avgCost": 4.7
     },
     {
