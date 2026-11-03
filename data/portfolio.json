@@ -1,6 +1,6 @@
 {
   "starting_value": 100000,
-  "cash": 16835.22,
+  "cash": 23965.22,
   "last_updated": "2026-11-02",
   "contributions": [
     {
@@ -35,11 +35,6 @@
     }
   ],
   "holdings": [
-    {
-      "ticker": "UMAC",
-      "shares": 500,
-      "avgCost": 27.69
-    },
     {
       "ticker": "AVAV",
       "shares": 50,

@@ -128,7 +128,7 @@ export default async function PortfolioPage() {
               <tr className="border-t border-white/10 bg-white/[0.02]">
                 <td className="px-6 py-4">
                   <p className="text-white/50 font-bold">CASH</p>
-                  <p className="text-white/30 text-xs">Includes $1,000 Jul contribution</p>
+                  <p className="text-white/30 text-xs">Includes monthly $1,000 contributions</p>
                 </td>
                 <td className="text-right px-4 py-4 text-white/30">—</td>
                 <td className="text-right px-4 py-4 text-white/30">—</td>
@@ -139,6 +139,14 @@ export default async function PortfolioPage() {
             </tbody>
           </table>
         </div>
+      </div>
+
+      {/* UMAC sale note */}
+      <div className="mt-10 bg-card border border-gold/20 rounded-xl p-6">
+        <p className="text-gold font-mono text-xs tracking-widest uppercase mb-2">Closed position: UMAC</p>
+        <p className="text-white/50 text-sm leading-relaxed">
+          Sold all 500 shares 2026-11-02 at the $14.26 close, under our $14.50 cut line; realized loss $6,715.00.
+        </p>
       </div>
 
       {/* XTND sale note */}
