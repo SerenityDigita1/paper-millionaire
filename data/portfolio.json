@@ -1,7 +1,7 @@
 {
   "starting_value": 100000,
-  "cash": 23965.22,
-  "last_updated": "2026-11-02",
+  "cash": 20965.74,
+  "last_updated": "2026-11-03",
   "contributions": [
     {
       "date": "2026-06-07",
@@ -74,6 +74,11 @@
       "ticker": "DPRO",
       "shares": 1789,
       "avgCost": 3.58
+    },
+    {
+      "ticker": "LAR",
+      "shares": 748,
+      "avgCost": 4.01
     }
   ]
 }

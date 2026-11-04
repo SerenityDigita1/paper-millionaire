@@ -65,6 +65,10 @@ const OVERLAY: Record<string, HoldingOverlay> = {
     label: 'Draganfly',
     note: 'Bought 2026-10-20 with half the XTND sale proceeds: 1,789 sh @ $3.58. Rules on closes only: cut all under $3.05, trim half at $5.50 then raise the cut to entry, no adds to a loser.',
   },
+  LAR: {
+    label: 'Lithium Argentina',
+    note: 'Lithium producer. Starter position bought 2026-11-03 at the $4.01 close: 748 sh for $2,999.48, funded by cash freed by the UMAC cut. Rules on closes only: cut all under $3.60, trim half at $6.75, no adds to a loser.',
+  },
 }
 
 export const HOLDINGS: Holding[] = portfolio.holdings.map((row) => {

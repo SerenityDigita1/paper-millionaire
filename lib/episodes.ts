@@ -8,6 +8,13 @@ export type Episode = {
 
 export const EPISODES: Episode[] = [
   {
+    number:      20,
+    title:       'I Sold Half My SoundHound. Thursday Decides the Rest.',
+    date:        '2026-11-04',
+    youtubeId:   'LSNtFR9RQGo',
+    description: 'Book $78,474, -24.33% on $103,700 paid in, $27,990 behind VOO. SoundHound closed $4.22 under its $4.25 cut: sold half, holding 682 shares through Thursday earnings. Unusual Machines sold at $14.26. Starter buy: 748 Lithium Argentina at $4.01.',
+  },
+  {
     number:      15,
     title:       "My Best Trade Is Up 48%. It's Worth $563.",
     date:        '2026-09-21',
