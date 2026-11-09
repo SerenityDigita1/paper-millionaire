@@ -141,6 +141,14 @@ export default async function PortfolioPage() {
         </div>
       </div>
 
+      {/* SOUN sale note */}
+      <div className="mt-10 bg-card border border-gold/20 rounded-xl p-6">
+        <p className="text-gold font-mono text-xs tracking-widest uppercase mb-2">Closed position: SOUN</p>
+        <p className="text-white/50 text-sm leading-relaxed">
+          Sold half (681 shares) 2026-11-02 at $4.275, then the remaining 682 shares 2026-11-09 at the $4.09 open after the November 6 close of $4.11, under our $4.25 cut line; total realized loss $705.44.
+        </p>
+      </div>
+
       {/* UMAC sale note */}
       <div className="mt-10 bg-card border border-gold/20 rounded-xl p-6">
         <p className="text-gold font-mono text-xs tracking-widest uppercase mb-2">Closed position: UMAC</p>

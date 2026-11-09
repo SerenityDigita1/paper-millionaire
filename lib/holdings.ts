@@ -59,7 +59,7 @@ const OVERLAY: Record<string, HoldingOverlay> = {
   },
   SOUN: {
     label: 'SoundHound AI',
-    note: 'Bought 2026-10-20 with half the XTND sale proceeds: 1,363 sh @ $4.70. Sold half (681 sh) 2026-11-02 at $4.275 for $2,911.28; 682 sh remain. Rules on closes only: cut all under $4.25, trim half at $7.00 then raise the cut to entry, no adds to a loser.',
+    note: 'Bought 2026-10-20 with half the XTND sale proceeds: 1,363 sh @ $4.70. Sold half (681 sh) 2026-11-02 at $4.275 for $2,911.28. Sold the remaining 682 sh 2026-11-09 at the $4.09 open after the 11/6 close of $4.11 under the $4.25 cut, for $2,789.38. Closed. Total realized loss $705.44.',
   },
   DPRO: {
     label: 'Draganfly',
@@ -68,6 +68,10 @@ const OVERLAY: Record<string, HoldingOverlay> = {
   LAR: {
     label: 'Lithium Argentina',
     note: 'Lithium producer. Starter position bought 2026-11-03 at the $4.01 close: 748 sh for $2,999.48, funded by cash freed by the UMAC cut. Rules on closes only: cut all under $3.60, trim half at $6.75, no adds to a loser.',
+  },
+  SHLD: {
+    label: 'Global X Defense Tech',
+    note: 'Defense technology ETF. First staged buy of the season: first half bought 2026-11-09 at the $59.20 open, 33 sh for $1,953.60, after closes inside the $58 to $60 zone on 11/5 and 11/6. Second half (about $2,000) still staged on a close inside $58 to $60. Rules on closes only: cut all under $55, trim half at $70, no adds to a loser.',
   },
 }
 
