@@ -141,6 +141,14 @@ export default async function PortfolioPage() {
         </div>
       </div>
 
+      {/* DPRO sale note */}
+      <div className="mt-10 bg-card border border-gold/20 rounded-xl p-6">
+        <p className="text-gold font-mono text-xs tracking-widest uppercase mb-2">Closed position: DPRO</p>
+        <p className="text-white/50 text-sm leading-relaxed">
+          Sold all 1,789 shares 2026-11-13 at the $2.83 close, the third close under our $3.05 cut line (November 11 $3.00, November 12 $2.88, November 13 $2.83); realized loss $1,341.75.
+        </p>
+      </div>
+
       {/* SOUN sale note */}
       <div className="mt-10 bg-card border border-gold/20 rounded-xl p-6">
         <p className="text-gold font-mono text-xs tracking-widest uppercase mb-2">Closed position: SOUN</p>

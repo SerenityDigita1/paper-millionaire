@@ -63,7 +63,7 @@ const OVERLAY: Record<string, HoldingOverlay> = {
   },
   DPRO: {
     label: 'Draganfly',
-    note: 'Bought 2026-10-20 with half the XTND sale proceeds: 1,789 sh @ $3.58. Rules on closes only: cut all under $3.05, trim half at $5.50 then raise the cut to entry, no adds to a loser.',
+    note: 'Bought 2026-10-20 with half the XTND sale proceeds: 1,789 sh @ $3.58. Sold all 1,789 sh 2026-11-13 at the $2.83 close after the third close under the $3.05 cut (11/11 $3.00, 11/12 $2.88, 11/13 $2.83), for $5,062.87. Closed. Realized loss $1,341.75.',
   },
   LAR: {
     label: 'Lithium Argentina',
@@ -71,7 +71,7 @@ const OVERLAY: Record<string, HoldingOverlay> = {
   },
   SHLD: {
     label: 'Global X Defense Tech',
-    note: 'Defense technology ETF. First staged buy of the season: first half bought 2026-11-09 at the $59.20 open, 33 sh for $1,953.60, after closes inside the $58 to $60 zone on 11/5 and 11/6. Second half (about $2,000) still staged on a close inside $58 to $60. Rules on closes only: cut all under $55, trim half at $70, no adds to a loser.',
+    note: 'Defense technology ETF. First staged buy of the season: first half bought 2026-11-09 at the $59.20 open, 33 sh for $1,953.60, after closes inside the $58 to $60 zone on 11/5 and 11/6. Second half bought 2026-11-13 at the $59.795 close, 33 sh for $1,973.24, after the close inside the $58 to $60 zone. Full position: 66 sh, average cost $59.4976, total cost $3,926.84. Rules on closes only: cut all under $55, trim half at $70, no adds to a loser.',
   },
 }
 
